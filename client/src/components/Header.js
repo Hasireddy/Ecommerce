@@ -1,21 +1,25 @@
-import { AppBar,Container } from "@mui/material";
+import { AppBar,Box ,Toolbar,Button,Typography} from "@mui/material";
 import StoreIcon from '@mui/icons-material/Store';
 import './Header.css';
 
 function Header()
 {
     return (
-        <div>
-            <AppBar color={"success"} className="appbar" position="static">
-                <Container maxWidth="xl">
-                    <StoreIcon style={{fontSize:"80px"}}/>
-                    <h1>Page1</h1>
-                    <h1>Page2</h1>
-                    <h1>Page3</h1>
-                    <h1>Page4</h1>
-                </Container>
-            </AppBar>
-        </div>
+        <>
+            <Box sx={{ display: 'flex' }}>
+                <AppBar color={"primary"} className="appbar" position="sticky">
+                    <Toolbar>
+                    <StoreIcon fontSize="large" edge="start" color="inherit" aria-label="logo" sx={{displax:{xs:"none",md:"flex"}}}/>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>My Store</Typography>
+                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                            <Button color="white" size="large">About</Button>   
+                            <Button color="white" size="large">Register</Button>
+                            <Button color="white" size="large">Login</Button>                  
+                    </Box>
+                    </Toolbar>                              
+                </AppBar>
+            </Box>
+        </>
     )
 }
 
