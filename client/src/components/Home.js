@@ -1,16 +1,17 @@
-import {Typography} from '@mui/material';
+import {Typography,Box} from '@mui/material';
 
 function Home(){
     return(
         <>
-             <Typography paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus,
-                nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem
-                felis nec erat. 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus,
-                nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem
-                felis nec erat.
-             </Typography>
+            <Box sx={{marginTop:'6rem',padding:'1rem',maxWidth:'100%',overflow:'hidden'}}>
+                <Typography sx={{
+                    fontSize:'3rem',
+                    textAlign:'center',
+                    marginBottom:'2rem'
+                }}>
+                    Welcome to the Store
+                </Typography>
+            </Box>   
         </>
     )
 }
