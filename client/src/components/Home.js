@@ -29,7 +29,7 @@ function Home(){
                 </Typography>
                
                 <Button sx={{
-                        backgroundColor:'#003eff',
+                        backgroundColor:'green',
                         color:'white',
                         width:'15rem',
                         margin:'3rem',

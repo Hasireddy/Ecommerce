@@ -1,5 +1,6 @@
 import { AppBar,Box ,Toolbar,Button,Typography,IconButton} from "@mui/material";
 import StoreIcon from '@mui/icons-material/Store';
+import { palette } from '@mui/system';
 import MenuIcon from '@mui/icons-material/Menu';
 import './Header.css';
 
@@ -8,7 +9,7 @@ function Header()
     return (
         <>
             <Box sx={{ display: 'flex' }}>
-                <AppBar color={"primary"} className="appbar" position="sticky">
+                <AppBar color={"success"} className="appbar" position="sticky">
                     <Toolbar>
                     {/* <StoreIcon fontSize="large" edge="start" color="inherit" aria-label="logo" sx={{display:{xs:"none",md:"flex"}}}/> */}
                     <IconButton color="inherit">

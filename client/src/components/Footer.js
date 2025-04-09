@@ -6,13 +6,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Footer() 
 {
     return(
-        <footer>
-            <Box sx={{
+        <>     
+            <AppBar color={"success"} className="appbar" position="sticky">
+                 <Box sx={{
                     textAlign:'center',
                     padding:'1rem',
                     lineHeight:'3rem',
                     }}>
-                 <AppBar color={"primary"} className="appbar" position="sticky">
                     <Typography variant='h6' component="div" sx={{fontWeight:'bold',fontSize:'1.5rem'}}>
                         My Company
                     </Typography>
@@ -61,9 +61,10 @@ function Footer()
                             }}/>
                         </a>
                     </Box>
-                 </AppBar>
-            </Box>
-        </footer>
+                </Box>
+             </AppBar>
+            
+        </>
     )
 }
 export default Footer;
