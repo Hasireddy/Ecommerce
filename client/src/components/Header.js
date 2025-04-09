@@ -1,5 +1,6 @@
-import { AppBar,Box ,Toolbar,Button,Typography} from "@mui/material";
+import { AppBar,Box ,Toolbar,Button,Typography,IconButton} from "@mui/material";
 import StoreIcon from '@mui/icons-material/Store';
+import MenuIcon from '@mui/icons-material/Menu';
 import './Header.css';
 
 function Header()
@@ -9,7 +10,10 @@ function Header()
             <Box sx={{ display: 'flex' }}>
                 <AppBar color={"primary"} className="appbar" position="sticky">
                     <Toolbar>
-                    <StoreIcon fontSize="large" edge="start" color="inherit" aria-label="logo" sx={{displax:{xs:"none",md:"flex"}}}/>
+                    {/* <StoreIcon fontSize="large" edge="start" color="inherit" aria-label="logo" sx={{display:{xs:"none",md:"flex"}}}/> */}
+                    <IconButton color="inherit">
+                        <MenuIcon/>
+                    </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>My Store</Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             <Button color="white" size="large">About</Button>   
