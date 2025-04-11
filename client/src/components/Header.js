@@ -19,7 +19,8 @@ function Header()
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             <Button color="white" size="large">About</Button>   
                             <Button color="white" size="large">Register</Button>
-                            <Button color="white" size="large">Login</Button>                  
+                            <Button color="white" size="large">Login</Button>      
+                            <Button color="white" size="large">Products</Button>              
                     </Box>
                     </Toolbar>                              
                 </AppBar>

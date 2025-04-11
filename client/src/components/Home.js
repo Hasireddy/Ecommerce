@@ -32,6 +32,7 @@ function Home(){
                         backgroundColor:'green',
                         color:'white',
                         width:'15rem',
+                        fontSize:'1.5rem',
                         margin:'3rem',
                         transition:'transform 0.3s',
                         '&hover':{
