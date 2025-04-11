@@ -14,7 +14,7 @@ function Footer()
                     lineHeight:'3rem',
                     }}>
                     <Typography variant='h6' component="div" sx={{fontWeight:'bold',fontSize:'1.5rem'}}>
-                        My Company
+                        My Store
                     </Typography>
                     <Typography>
                         &copy,{new Date().getFullYear()} My Store.  All rights reserved.

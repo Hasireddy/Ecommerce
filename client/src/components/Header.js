@@ -1,7 +1,6 @@
 import { AppBar,Box ,Toolbar,Button,Typography,IconButton} from "@mui/material";
-import StoreIcon from '@mui/icons-material/Store';
-import { palette } from '@mui/system';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header()
@@ -17,9 +16,8 @@ function Header()
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>My Store</Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                            <Button color="white" size="large">About</Button>   
-                            <Button color="white" size="large">Register</Button>
-                            <Button color="white" size="large">Login</Button>      
+                            <Button color="white" size="large">About</Button> 
+                            <Button color="white" size="large" as={Link} to="/login">Login</Button>      
                             <Button color="white" size="large">Products</Button>              
                     </Box>
                     </Toolbar>                              
