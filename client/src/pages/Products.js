@@ -24,7 +24,7 @@ export default function Products() {
   return ( 
     <div>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'}  marginTop={'50px'} marginBottom={'50px'}>
-        <Grid size={6}>
+        <Grid size={12}>
             <ProductFilter products={products} setFilteredProducts={setFilteredProducts}/>
             <h2>Products</h2>
             <ul style={{ listStyle: 'none', padding: 0 }}>
