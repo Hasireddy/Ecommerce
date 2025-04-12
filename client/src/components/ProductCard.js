@@ -1,6 +1,7 @@
 export default function ProductCard({product}){
     return(
         <>
+        
             <li key={product.id} style={{ marginBottom: '20px', border: '1px solid #ccc', padding: '10px' }}>
           <h3>{product.title}</h3>
           <img src={product.image} alt={product.title} style={{ height: '100px' }} />

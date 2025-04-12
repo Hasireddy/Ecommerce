@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
+import ProductFilter from '../components/ProductFilter.js';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
-        console.log("re-render")
-        setProducts(response.data); // Save products to state
+        const allProducts = response.data;
+        setProducts(allProducts); // Save all products to state
+        setFilteredProducts(allProducts); 
       })
       .catch(error => {
         console.error('Error fetching products:', error);
@@ -18,12 +21,13 @@ export default function Products() {
 
   return ( 
     <div>
-    <h2>Products</h2>
-    <ul style={{ listStyle: 'none', padding: 0 }}>
-      {products.map(product => (
-        <ProductCard product={product}/>
-      ))}
-    </ul>
+      <ProductFilter products={products} setFilteredProducts={setFilteredProducts}/>
+      <h2>Products</h2>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {filteredProducts.map(product => (
+          <ProductCard key={product.id} product={product}/>
+        ))}
+      </ul>
   </div>
 );
 }
