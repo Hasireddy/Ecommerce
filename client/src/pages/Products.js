@@ -43,7 +43,7 @@ export default function Products() {
 
         {/* Right Column: Title + Product Cards */}
         <Grid item xs={12} md={9}>
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography variant="h2" align="center" gutterBottom>
             Products
           </Typography>
           <Box sx={{ padding: 2 }}>

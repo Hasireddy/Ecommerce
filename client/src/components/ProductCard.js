@@ -17,9 +17,6 @@ export default function ProductCard({ product }) {
           <Typography gutterBottom variant="h6" component="div">
             {product.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {product.description}
-          </Typography> 
           <Typography variant="subtitle1" sx={{ marginTop: 1 }}>
             <strong>Price:</strong> ${product.price}
           </Typography>
