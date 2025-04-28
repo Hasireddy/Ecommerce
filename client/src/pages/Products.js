@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {Grid} from '@mui/material';
+import { Grid, Typography, Box ,Button} from '@mui/material';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
-import ProductFilter from '../components/ProductFilterCategory.js';
-import  ProductSorting from '../components/ProductSorting.js';
+import ProductFilter from '../components/ProductFilterCategory';
+import ProductSorting from '../components/ProductSorting';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -12,31 +13,50 @@ export default function Products() {
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
-        const allProducts = response.data;
-        setProducts(allProducts); // Save all products to state
-        setFilteredProducts(allProducts); 
+        setProducts(response.data);
+        setFilteredProducts(response.data);
       })
       .catch(error => {
         console.error('Error fetching products:', error);
       });
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []);
 
-  return ( 
-    <div>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'}  marginTop={'50px'} marginBottom={'50px'}>
-        <Grid size={12}>
-            <ProductFilter products={products} setFilteredProducts={setFilteredProducts}/>
-            <h2>Products</h2>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
+  return (
+    <Box sx={{ padding: { xs: 2, sm: 4 ,display:'flex',flexDirection:'column'}, width: '100%' }}>
+      <Grid container spacing={5}>
+        {/* Left Sidebar: Filter and Sorting (Side by Side) */}
+        <Grid item xs={12} md={3}>
+          <Box sx={{ position: 'sticky', top: 20 }}>
+            <Grid container spacing={3} direction="column">
+              {/* Product Filter */}
+              <Grid item>
+                <ProductFilter products={products} setFilteredProducts={setFilteredProducts} />
+              </Grid>
+
+              {/* Product Sorting */}
+              <Grid item>
+                <ProductSorting products={products} />
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+
+        {/* Right Column: Title + Product Cards */}
+        <Grid item xs={12} md={9}>
+          <Typography variant="h4" align="center" gutterBottom>
+            Products
+          </Typography>
+          <Box sx={{ padding: 2 }}>
+            <Grid container spacing={3}>
               {filteredProducts.map(product => (
-                <ProductCard key={product.id} product={product}/>
+                <Grid item xs={12} sm={6} md={3} key={product.id}>
+                  <ProductCard product={product} />
+                </Grid>
               ))}
-            </ul>
-          </Grid>
-          <Grid size={6}>
-            <ProductSorting products={products}/>
-          </Grid>
+            </Grid>
+          </Box>
+        </Grid>
       </Grid>
-  </div>
-);
+    </Box>
+  );
 }
