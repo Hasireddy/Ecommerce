@@ -9,6 +9,7 @@ const SingleProduct = () => {
     const [product, setProduct] = useState(null);
     const {addToCart} = useCart()
   
+  
     useEffect(() => {
       // Fetch the product details from the API using the ID
       axios.get(`https://fakestoreapi.com/products/${id}`)
@@ -55,8 +56,8 @@ const SingleProduct = () => {
   
           {/* Add to Cart Button */}
           <CardActions sx={{ justifyContent: 'center', paddingBottom: 2 }}>
-            
-            <Button size="large" variant="contained" color="primary" onClick={()=>addToCart(product)}>
+            <Button size="large" variant="contained" color="primary">  
+            {/* <Button size="large" variant="contained" color="primary" onClick={()=>addToCart(product)}> */}
               Add to Cart
             </Button>
           </CardActions>

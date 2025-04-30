@@ -34,7 +34,7 @@ function Header()
                             <Button color="white" size="large">About</Button> 
                             <Button color="white" size="large" as={Link} to="/login">Login</Button>      
                             <Button color="white" size="large" as={Link} to="/products">Products</Button>  
-                            <IconButton aria-label="cart">
+                            <IconButton aria-label="cart" component={Link} to="/cart">
                                 <StyledBadge badgeContent={itemsCount} color="secondary">
                                     <ShoppingCartIcon />
                                 </StyledBadge>
