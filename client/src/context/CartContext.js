@@ -1,10 +1,13 @@
 import { createContext, useContext, useState } from "react";
+import { toast } from 'react-toastify';
+
 const CartContext = createContext(undefined);
 
 export const CartProvider = ({children}) => {
     const [items, setItems] = useState([]);
 
     const addToCart = (product) => {
+        console.log("Adding to cart:", product); 
         setItems(
             currentItems => {
                 const existingItem = currentItems.find(item => item.id === product.id);
@@ -13,6 +16,7 @@ export const CartProvider = ({children}) => {
                         item => item.id === product.id ? {...item, quantity: item.quantity + 1} : item
                     )
                 }
+                toast.success(`${product.title} added to cart`);
                 return [...currentItems, {...product, quantity: 1}]
             }
         );
@@ -47,7 +51,7 @@ export const CartProvider = ({children}) => {
 
     return (
         <CartContext.Provider
-            values={{
+            value={{
                 items,
                 addToCart,
                 removeFromCart,

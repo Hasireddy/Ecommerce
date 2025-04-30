@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Grid, Typography, Box, Button, Card, CardMedia, CardContent, CardActions } from '@mui/material';
 import { useParams } from 'react-router-dom'; 
 import axios from 'axios';
+import {useCart} from '../context/CartContext';
  
 const SingleProduct = () => {
     const { id } = useParams();  // Extract product ID from the URL
     const [product, setProduct] = useState(null);
+    const {addToCart} = useCart()
   
     useEffect(() => {
       // Fetch the product details from the API using the ID
@@ -53,7 +55,8 @@ const SingleProduct = () => {
   
           {/* Add to Cart Button */}
           <CardActions sx={{ justifyContent: 'center', paddingBottom: 2 }}>
-            <Button size="large" variant="contained" color="primary">
+            
+            <Button size="large" variant="contained" color="primary" onClick={()=>addToCart(product)}>
               Add to Cart
             </Button>
           </CardActions>

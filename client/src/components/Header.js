@@ -17,8 +17,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 function Header()
 {
-    // const {items} = useCart();
-    // const itemsCount = items? 10: 0;
+     const {items} = useCart();
+    const itemsCount = items.reduce((sum,item)=>sum+item.quantity,0)
 
     return (
         <>
@@ -35,7 +35,7 @@ function Header()
                             <Button color="white" size="large" as={Link} to="/login">Login</Button>      
                             <Button color="white" size="large" as={Link} to="/products">Products</Button>  
                             <IconButton aria-label="cart">
-                                <StyledBadge badgeContent={10} color="secondary">
+                                <StyledBadge badgeContent={itemsCount} color="secondary">
                                     <ShoppingCartIcon />
                                 </StyledBadge>
                             </IconButton>                   
