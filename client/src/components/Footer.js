@@ -7,11 +7,15 @@ function Footer()
 {
     return(
         <>     
-            <AppBar color={"success"} className="appbar" position="sticky">
                  <Box sx={{
-                    textAlign:'center',
-                    padding:'1rem',
-                    lineHeight:'3rem',
+                     position: 'fixed',
+                     bottom: 0,
+                     left: 0,
+                     width: '100%', 
+                     backgroundColor: '#4caf50', 
+                     padding: '1rem',
+                     textAlign: 'center',
+                     zIndex: 1200,
                     }}>
                     <Typography variant='h6' component="div" sx={{fontWeight:'bold',fontSize:'1.5rem'}}>
                         My Store
@@ -62,7 +66,6 @@ function Footer()
                         </a>
                     </Box>
                 </Box>
-             </AppBar>
             
         </>
     )

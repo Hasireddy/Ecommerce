@@ -22,7 +22,7 @@ export default function Products() {
   }, []);
 
   return (
-    <Box sx={{ padding: { xs: 2, sm: 4 ,display:'flex',flexDirection:'column'}, width: '100%' }}>
+    <Box sx={{ padding: { xs: 2, sm: 4 ,display:'flex',flexDirection:'column',marginBottom:'2rem'}, width: '100%' }}>
       <Grid container spacing={5}>
         {/* Left Sidebar: Filter and Sorting (Side by Side) */}
         <Grid item xs={12} md={3}>

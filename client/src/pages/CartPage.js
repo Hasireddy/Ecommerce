@@ -7,13 +7,14 @@ const CartPage = () => {
 
   if (items.length === 0) {
     return (
-      <Typography variant="h5" align="center" sx={{ mt: 4 }}>
+      <Typography variant="h2" align="center" sx={{ marginTop:'5rem'}}>
         Your cart is empty.
       </Typography>
     );
   }
 
   return (
+    <Grid container spacing={3} sx={{ marginTop: '200px', marginBottom: '200px' }}>
     <Box sx={{ padding: 4 }}>
       <Typography variant="h4" gutterBottom>Shopping Cart</Typography>
       <Grid container spacing={3}>
@@ -40,6 +41,7 @@ const CartPage = () => {
         <Button variant="contained" color="primary" sx={{ mt: 2 }}>Checkout</Button>
       </Box>
     </Box>
+    </Grid>
   );
 };
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Register(){
     return(
     <>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'}  marginTop={'50px'} marginBottom={'50px'}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'} sx={{margin:'12rem'}}>
         <Box
                 component="form"
                 sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}

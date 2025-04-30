@@ -5,7 +5,7 @@ export default function Login()
 {
     return(
         <>
-           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'} marginTop={'100px'} marginBottom={'100px'}>
+           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'} sx={{margin:'15rem'}}>
             <Box
                 component="form"
                 sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
