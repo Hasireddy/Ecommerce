@@ -29,10 +29,10 @@ function Header()
                     <IconButton color="inherit">
                         <MenuIcon/>
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>My Store</Typography>
+                    <Typography variant="h6" component={Link} to="/home" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' ,color:'white',textDecoration: 'none'}}}>My Store</Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}> 
-                            <Button color="white" size="large" as={Link} to="/login">Login</Button>      
-                            <Button color="white" size="large" as={Link} to="/products">Products</Button>  
+                            <Button color="white" size="large" as={Link} to="/login"  sx={{textDecoration: 'none'}}>Login</Button>      
+                            <Button color="white" size="large" as={Link} to="/products" sx={{textDecoration: 'none'}}>Products</Button>  
                             <IconButton aria-label="cart" component={Link} to="/cart" size="large" sx={{ color: 'white' }}>
                                 <StyledBadge badgeContent={itemsCount} color="secondary">
                                     <ShoppingCartIcon />
