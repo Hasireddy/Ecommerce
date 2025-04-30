@@ -1,25 +1,19 @@
-
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 
 const ProductFilter = ({ products, setFilteredProducts }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  // Extract unique categories from the products
   const categories = [...new Set(products.map(product => product.category))];
 
-  // Handle change in filter
-  const handleCategoryChange = (event) => {
-    const category = event.target.value;
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
     setSelectedCategory(category);
 
-    // If no category is selected, show all products
     if (category === '') {
-      setFilteredProducts(products);
+      setFilteredProducts(products); // show all products
     } else {
-      // Filter products by selected category
       const filtered = products.filter(product => product.category === category);
       setFilteredProducts(filtered);
-      console.log('Filtered Products:', filtered);  
     }
   };
 
@@ -27,13 +21,15 @@ const ProductFilter = ({ products, setFilteredProducts }) => {
     <div>
       <label htmlFor="categoryFilter">Filter by Category: </label>
       <select
-        name="categoryFilter"
+        id="categoryFilter"
         value={selectedCategory}
         onChange={handleCategoryChange}
       >
         <option value="">-- Select Category --</option>
         {categories.map((category, index) => (
-          <option key={index} value={category}>{category}</option>
+          <option key={index} value={category}>
+            {category}
+          </option>
         ))}
       </select>
     </div>
@@ -41,4 +37,3 @@ const ProductFilter = ({ products, setFilteredProducts }) => {
 };
 
 export default ProductFilter;
-

@@ -9,12 +9,12 @@ import ProductSorting from '../components/ProductSorting';
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(response => {
         setProducts(response.data);
-        setFilteredProducts(response.data);
+        setFilteredProducts(response.data)
       })
       .catch(error => {
         console.error('Error fetching products:', error);
@@ -35,7 +35,7 @@ export default function Products() {
 
               {/* Product Sorting */}
               <Grid item>
-                <ProductSorting products={products} />
+                <ProductSorting products={products} setFilteredProducts={setFilteredProducts}/>
               </Grid>
             </Grid>
           </Box>
