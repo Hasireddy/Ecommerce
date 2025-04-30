@@ -12,24 +12,24 @@ function Footer()
                      bottom: 0,
                      left: 0,
                      width: '100%', 
-                     backgroundColor: '#4caf50', 
+                     backgroundColor: '#3A7D44', 
                      padding: '1rem',
                      textAlign: 'center',
                      zIndex: 1200,
                     }}>
-                    <Typography variant='h6' component="div" sx={{fontWeight:'bold',fontSize:'1.5rem'}}>
+                    <Typography variant='h6' component="div" sx={{fontWeight:'bold',fontSize:'1.5rem',color:'white'}}>
                         My Store
                     </Typography>
-                    <Typography>
+                    <Typography sx={{color:'white'}}>
                         &copy,{new Date().getFullYear()} My Store.  All rights reserved.
                     </Typography>
-                    <Typography>
+                    <Typography sx={{color:'white'}}>
                         123 Main Street,Munich,Germany
                     </Typography>
-                    <Typography>
+                    <Typography sx={{color:'white'}}>
                         +11 233 445 5566
                     </Typography>
-                    <Typography>
+                    <Typography sx={{color:'white'}}>
                         mystore@gmail.com
                     </Typography>
                     <Box sx={{marginTop:'1rem'}}>

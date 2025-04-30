@@ -1,16 +1,20 @@
 import {Typography,Box,Button,Container} from '@mui/material';
-import cover from '../Assets/landing2.jpg'
+import cover from '../Assets/shop.webp'
 
 function Home(){
     return(
         <>
-        <Box sx={{backgroundImage:`url(${cover})`}}>
+        <Box sx={{backgroundImage:`url(${cover})`, backgroundSize: 'cover',  
+                    backgroundPosition: 'center',  
+                    backgroundRepeat: 'no-repeat'
+                }}>
          <Container sx={{display:'flex',flexDirection:'column',alignItems:'center',minHeight:'100vh',margin:'auto',textAlign:'center',justifyContent:'center',maxWidth:'100%'}}>
             <Box sx={{marginTop:'6rem',padding:'1rem',maxWidth:'100%',overflow:'hidden'}}>
                 <Typography sx={{
-                    fontSize:'3rem',
+                    fontSize:'7rem',
                     textAlign:'center',
-                    marginBottom:'2rem',
+                    marginBottom:'7rem',
+                    color:'white',
                     '@media(max-width:442px)':{
                         fontSize:'1.5rem'
                     }
@@ -21,6 +25,7 @@ function Home(){
                     fontSize:'2rem',
                     textAlign:'center',
                     marginBottom:'1rem',
+                    color:'white',
                     '@media(max-width:442px)':{
                         fontSize:'1rem'
                     }
